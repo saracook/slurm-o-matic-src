@@ -1,0 +1,53 @@
+.slurm-form .runtime-form {
+  align-items: flex-start;
+}
+
+.slurm-form,.slurm-form fieldset,
+.slurm-form .form-control-plaintext,
+.slurm-form .form-control,
+.slurm-form input,
+.slurm-form select,{
+  font-size:18px;
+}
+
+#slurm {
+  background-color: white;
+  padding: 1em;
+  border: 1px solid;
+  margin: 0 0 2em;
+}
+
+#copyBtn.funkytown {
+  text-align: left;
+}
+#slurm.funkyslurm {
+  border-color: blue;
+}
+
+.tips {
+  ::placeholder {
+    color: white;
+    opacity: .8;
+  }
+  margin-bottom:2em;
+  .tip-input {
+    flex-grow: 9;
+    input.terminal {
+      background-color: dimgray;
+      border: 1px solid;
+      color: white;
+
+    }
+  }
+  .tip-btn {
+    flex-grow: 1;
+  }
+}
+
+.tips h4 {
+  margin-top: 2em;
+}
+
+.slurm-page h3 {
+  margin-top: 1em;
+}

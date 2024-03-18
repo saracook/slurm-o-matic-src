@@ -1,0 +1,12 @@
+
+{% if page.toc == true %}
+{% include sidebar-toc.html %}
+{% endif %}
+
+{% include sidebar-see-also.html %}
+
+{% if page.home != true %}
+{% include sidebar-box.html title="Support is Available" content="<ul><li><a href='/help-and-support.html'>Ask Us Anything</a></li></ul>" %}
+{% endif %}
+
+{% include sidebar-box.html title="Request A Nero GCP Account" content="<ul><li><a href=\"https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=fa9f80bddbf05b401df130cf9d96198b\" target=\"_new\">Order Nero GCP</a></li></ul>" %}

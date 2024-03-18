@@ -1,6 +1,15 @@
 .slurm-form .runtime-form {
   align-items: flex-start;
 }
+
+.slurm-form,.slurm-form fieldset,
+.slurm-form .form-control-plaintext,
+.slurm-form .form-control,
+.slurm-form input,
+.slurm-form select,{
+  font-size:18px;
+}
+
 #slurm {
   background-color: white;
   padding: 1em;

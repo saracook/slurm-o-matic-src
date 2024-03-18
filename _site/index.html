@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" homepage">
+<title>SLURM*O*MATIC | Slurm*O*Rama | Carina</title>
+  <meta charset="utf-8">
+  <title>SLURM*O*MATIC | Slurm*O*Rama | Carina</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+  <script src="https://kit.fontawesome.com/59cf41c46f.js" crossorigin="anonymous"></script>
+
+  <script src="/assets/js/slurm.js" type="text/javascript"></script>
+">
+">
+  <link href="/assets/css/main.inc.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/assets/css/decanter.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+
+</head>
+
+<body>
+  <header class="su-site-header su-masthead su-masthead--right">
+    <a  href="#page-content" class="su-skiplinks">Skip to main content</a>
+    <div class="su-brand-bar">
+  <div class="su-brand-bar__container">
+    <a  class="su-brand-bar__logo" href="https://stanford.edu">Stanford University</a>
+  </div>
+</div>
+    <section class="masthead">
+      
+
+
+
+
+
+
+
+
+
+<div class="su-lockup su-lockup--option-b">
+  
+  <a href="" >
+  
+  <div class="su-lockup__cell1">
+      <div class="su-lockup__wordmark-wrapper">
+        <span class="su-lockup__wordmark">Stanford</span>
+        
+      </div>
+  </div>
+
+
+  
+  <div class="su-lockup__cell2">
+    
+    <span class="su-lockup__line1" >Research Computing</span>
+    
+
+    
+    <span class="su-lockup__line2" >Slurm*O*Rama</span>
+    
+
+    
+  </div>
+  
+
+  
+    </a>
+  
+</div>
+
+      <!-- Navigation -->
+<nav  class="su-main-nav su-main-nav--light no-js" aria-label="">
+  <button class="su-main-nav__toggle " aria-expanded="false"></button>
+  <ul class="su-main-nav__menu-lv1">
+    
+    
+      
+        <li >
+      
+      
+      <a href="/">Home</a>
+      
+      
+    </li>
+    
+      
+        <li >
+      
+      
+      <a href="/cheatsheet.html">Cheat Sheet</a>
+      
+      
+    </li>
+    
+  </ul>
+</nav>
+    </section>
+  </header>
+  <main class="page-content" id="page-content">
+    <div class="layout centered-container">
+      <!-- Content Row -->
+      <div class="row">
+        
+        
+
+        <!-- Content Column -->
+        <div class="col-md-12">
+          <h1 class="post-title-main">SLURM*O*MATIC</h1>
+          <div class="slurm-page">
+      <h2>Carina</h2>
+
+
+Welcome to the Slurm-O-Matic, a tool to help you write your slurm sbatch scripts. When you like what you see, click the Copy to Clipboard button and paste the text into your text editor.
+
+  ### Available Queues
+  <table class="table table-bordered table-condensed" id="resource-table">
+    <thead>
+      <tr>
+        <th>Queue Name</th>
+        <th>CPUs</th>
+        <th>Memory</th>
+        <th>Nodes</th>
+        <th>GPUs</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div class="row slurm-form">
+  <div class="col-sm-6">
+  <fieldset>
+    <h3>Choose a Queue</h3>
+    <div class="form-group">
+      <div id="choose-queue"></div>
+    </div>
+    <div class="form-group gpu-group">
+      <label>Specify GPUs</label>
+      <div id="choose-gpu"></div>
+    </div>
+  </fieldset>
+  <h3>Allocate Resources</h3>
+  <fieldset>
+  <div class="form-group">
+    <label><span class="cpu-gpu">CPU</span> (cores)</label>
+    <select id="cpu" class="form-control">
+      <option selected="" value="&lt;&gt;">---</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Memory (GB)</label>
+    <select id="memory" class="form-control">
+      <option selected="" value="&lt;&gt;">---</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Nodes</label>
+    <select id="nodes" class="form-control">
+      <option selected="" value="&lt;&gt;">---</option>
+    </select>
+  </div>
+  <div class="form-group gpu-group">
+    <label>GPUs</label>
+    <select id="gpu" class="form-control">
+      <option selected="" value="&lt;&gt;">---</option>
+    </select>
+  </div>
+  <div class="form-group" id="runtime">
+    <label>Running Time</label>
+    <div class="form-row form-inline runtime-form">
+      <div class="col-auto">
+        <label class="sr-only" for="runtimeHr">Hours</label>
+        <select id="runtimeHr" class="form-control fancy-dropdown"></select>
+        <small class="form-text text-muted text-center">Hours</small>
+      </div>
+      <div class="col-auto">
+        <span class="separator">:</span>
+      </div>
+      <div class="col-auto"><label class="sr-only" for="runtimeMin">Minutes</label>
+        <select id="runtimeMin" class="form-control fancy-dropdown"></select>
+        <small class="form-text text-muted text-center">Minutes</small>
+      </div>
+    </div>
+    &lt;/fieldset&gt;
+    <fieldset>
+            <h3>Modules/Commands</h3>
+            <div class="form-group">
+              <label>Modules to load</label>
+              <select id="modules" class="fancy-dropdown" multiple="multiple" style="width:100%">
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Commands to run</label>
+              <textarea class="form-control autoresizing" id="commands" rows="2" placeholder="srun hostname"></textarea>
+            </div>
+          </fieldset>
+          <fieldset>
+            <h3>Recommended Settings</h3>
+            <div class="form-group">
+              <label>SUnetID</label>
+              <input type="text" class="form-control" name="sunetid" id="sunetid" placeholder="This will enable email notifications" maxlength="8" />
+            </div>
+            <div class="form-group">
+              <label>Job Name</label>
+              <input type="text" class="form-control" name="jobname" id="jobname" placeholder="Name this job" />
+            </div>
+            <div class="form-group">
+              <label>Working directory</label>
+              <input type="text" class="form-control" name="workingdir" id="workingdir" placeholder="/full/path/to/directory/" />
+            </div>
+          </fieldset>
+        </div>
+      &lt;/div&gt;
+      <div class="col-sm-6">
+        <div class="form-horizontal">
+          <fieldset>
+            <h3>SLURM Script <a class="btn btn-outline-info float-right" id="copyBtn"><i class="fa-regular fa-clipboard"></i><span> Copy to Clipboard</span></a></h3>
+            <textarea id="slurm" class="form-control form-control-plaintext" rows="16" readonly=""></textarea>
+          </fieldset>
+          <fieldset>
+            <h3>Optional Settings</h3>
+            <div class="form-group">
+              <label>Std out file name</label>
+              <input type="text" class="form-control" name="stdout" id="stdout" placeholder="Change output file name" />
+            </div>
+            <div class="form-group">
+              <label>Std err file name</label>
+              <input type="text" class="form-control" name="stderr" id="stderr" placeholder="Change error file name" />
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    &lt;/div&gt;
+</fieldset></div></div></div>
+
+        </div>
+        
+      </div>
+      <!-- /.row -->
+    </div>
+  </main>
+  <footer>
+    
+
+
+<div class="su-local-footer ">
+  <div class="su-local-footer__header">
+    
+
+
+
+
+
+
+
+
+
+<div class="su-lockup su-lockup--option-b">
+  
+  <a href="" >
+  
+  <div class="su-lockup__cell1">
+      <div class="su-lockup__wordmark-wrapper">
+        <span class="su-lockup__wordmark">Stanford</span>
+        
+      </div>
+  </div>
+
+
+  
+  <div class="su-lockup__cell2">
+    
+    <span class="su-lockup__line1" >Research Computing</span>
+    
+
+    
+    <span class="su-lockup__line2" >Slurm*O*Rama</span>
+    
+
+    
+  </div>
+  
+
+  
+    </a>
+  
+</div>
+  </div>
+  <div class="su-local-footer__columns">
+    <div class="su-local-footer__cell1">
+      
+      
+      <nav aria-label="footer primary nav">
+        <ul class="su-local-footer__action-links">
+
+          
+              <li>
+      
+      <a href="http://www.stanford.edu/research/" target="_blank" class="su-link su-link--new" >Research at Stanford</a>
+      
+    </li>
+          
+              <li>
+      
+      <a href="http://news.stanford.edu/" target="_blank" class="su-link su-link--new" >Stanford News</a>
+      
+    </li>
+          
+        </ul>
+      </nav>
+      
+
+    </div>
+    <div class="su-local-footer__cell2">
+      
+      <h2 class="su-local-footer__list-heading">Contact</h2>
+      
+
+      
+        <ul class="su-local-footer__action-links">
+          
+              <li>
+      
+      <a href="mailto:srcc-support@stanford.edu" class="su-link su-link--email">srcc-support@stanford.edu</a>
+      
+    </li>
+          
+        </ul>
+      
+
+    </div>
+    <div class="su-local-footer__cell3">
+      
+      <h2 class="su-local-footer__list-heading">Resources</h2>
+      
+
+      <nav aria-label="footer primary nav">
+        <ul class="su-local-footer__action-links">
+               <li>
+      
+      <a href="https://twitter.com/StanfordCompute" target="_blank"  class="su-link su-link--external">SRCC Twitter</a>
+      
+    </li>
+               <li>
+      
+      <a href="https://srcc.stanford.edu/work-research-computing" target="_blank" class="su-link su-link--new" >Work at Research Computing</a>
+      
+    </li>
+          
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    <section class="su-global-footer">
+  <div class="su-global-footer__container" title="Common Stanford resources">
+    <div class="su-global-footer__brand">
+      <a class="su-logo" href="https://www.stanford.edu">
+        Stanford
+        <br />
+        University
+      </a>
+    </div>
+    <div class="su-global-footer__content">
+      <nav aria-label="global footer menu">
+        <ul class="su-global-footer__menu su-global-footer__menu--global">
+          <li>
+            <a href="https://www.stanford.edu">
+              Stanford Home
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://visit.stanford.edu/plan/">
+              Maps &amp; Directions
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.stanford.edu/search/">
+              Search Stanford
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://emergency.stanford.edu">
+              Emergency Info
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="su-global-footer__menu su-global-footer__menu--policy">
+          <li>
+            <a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">
+              Terms of Use
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy">
+              Privacy
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">
+              Copyright
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images">
+              Trademarks
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://studentservices.stanford.edu/more-resources/student-policies/non-academic/non-discrimination" title="Non-discrimination policy">
+              Non-Discrimination
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues">
+              Accessibility
+              <span class="su-global-footer__link-a11y">(link is external)</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="su-global-footer__copyright">
+        <span>&copy; Stanford University.</span>
+        <span>&nbsp; Stanford, California 94305.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </footer>
+</body>
+
+</html>
